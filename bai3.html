@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hàm đếm số ký tự nguyên âm</title>
+</head>
+
+<body>
+    <script>
+        function countVowelCharacter(array) {
+            let vowels = ['a', 'o', 'e', 'u', 'i'];
+            let count = 0;
+            for (let i = 0; i < array.length; i++) {
+                if (vowels.includes(array[i].toLowerCase())) {
+                    count++
+                }
+            } if (count === 0) {
+                return false;
+            }
+            return count;
+        }
+
+        let array = prompt(`Nhập vào một chuỗi cần đếm số ký tự nguyên âm`);
+
+        let result = countVowelCharacter(array)
+
+        document.write(`Số lượng ký tự nguyên âm trong chuỗi vừa nhập là: ${result}`);
+    </script>
+
+</body>
+
+</html>

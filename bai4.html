@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xây dựng lớp Staff với thuộc tính : full name và email
+        Phương thức : tạo contructor nhận vào các giá trị của các thuộc tính 
+        setfullname() để thiết đặt  giá trị của tham số truyền vào
+        getFullname() trả về tên của một Staff
+        setEmail
+        getEmail () trả về email của staff
+        tostring() trả về chuỗi chưa thông tin của đối tượng fullname và email
+        gọi phương thức setfullname và đổi tên thành david do
+        tạo 1 mảng có 3 đối tượng có dadvid ở trên
+        lặp qua các mảng staff và gọi phương thức tostring để hiển thị thông tin của từng đối tương
+    </title>
+</head>
+<body>
+    <script>
+        class Staff{
+            constructor(fullname, email){
+                this.fullname = fullname;
+                this.email = email;
+            }
+            setFullName(fullname){
+                this.fullname = fullname;
+            }
+            setEmail(email){
+                this.email = email;
+            }
+            getFullName(){
+                return this.fullname;
+            }
+            getEmail(){
+                return this.email;
+            }
+            toString(){
+                return `Tên: ${this.fullname} , Email: ${this.email}`;
+            }
+        }
+    
+        //Tạo đối tượng david và gọi phương thức để đổi tên và email
+        let objectStaff = new Staff('Dadvid', 'david@gmail.com');
+        objectStaff.setFullName("David Do");
+        console.log(objectStaff.getFullName());
+        
+        objectStaff.setEmail("david.do@gmail.com");
+        console.log(objectStaff.getEmail());
+
+        let info = objectStaff.toString();
+        document.write(info);
+
+
+        //Tạo đối tượng và tạo mảng 
+        let david = new Staff ('David', 'david@gmail.com');
+        david.setFullName('David Do');
+        david.setEmail('david.do@gmail.com');
+       
+        let jack = new Staff ('Jack', 'jack@gmail.com');
+        jack.setFullName('Jack Do');
+        jack.setEmail('jack.do@gmail.com');
+       
+        let mike = new Staff ('Mike', 'mike@gmail.com');
+        mike.setFullName('Mike Do');
+        mike.setEmail('mike.do@gmail.com');
+       
+
+        let Staffs = [david, jack , mike];
+        for ( let i = 0; i <Staffs.length; i++){
+            console.log(Staffs[i].toString())
+        };
+    </script>
+</body>
+</html>
